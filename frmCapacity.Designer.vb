@@ -57,7 +57,8 @@ Partial Class frmCapacity
         Me.lblDispatchTimeIndicator = New System.Windows.Forms.Label()
         Me.lblRPH = New System.Windows.Forms.Label()
         Me.lblRPD = New System.Windows.Forms.Label()
-        Me.lblDispatcTime = New System.Windows.Forms.Label()
+        Me.lblDispatchTime = New System.Windows.Forms.Label()
+        Me.lblResultsIndicator = New System.Windows.Forms.Label()
         CType(Me.picCoaster, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpStationType.SuspendLayout()
         Me.grpUnload.SuspendLayout()
@@ -357,30 +358,30 @@ Partial Class frmCapacity
         'lblRPHIndicator
         '
         Me.lblRPHIndicator.AutoSize = True
-        Me.lblRPHIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRPHIndicator.Font = New System.Drawing.Font("Cambria", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRPHIndicator.Location = New System.Drawing.Point(33, 408)
         Me.lblRPHIndicator.Name = "lblRPHIndicator"
-        Me.lblRPHIndicator.Size = New System.Drawing.Size(156, 13)
+        Me.lblRPHIndicator.Size = New System.Drawing.Size(142, 12)
         Me.lblRPHIndicator.TabIndex = 21
         Me.lblRPHIndicator.Text = "Maximum Riders Per Hour:"
         '
         'lblRPDIndicator
         '
         Me.lblRPDIndicator.AutoSize = True
-        Me.lblRPDIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRPDIndicator.Font = New System.Drawing.Font("Cambria", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRPDIndicator.Location = New System.Drawing.Point(33, 431)
         Me.lblRPDIndicator.Name = "lblRPDIndicator"
-        Me.lblRPDIndicator.Size = New System.Drawing.Size(151, 13)
+        Me.lblRPDIndicator.Size = New System.Drawing.Size(136, 12)
         Me.lblRPDIndicator.TabIndex = 22
         Me.lblRPDIndicator.Text = "Maximum Riders Per Day:"
         '
         'lblDispatchTimeIndicator
         '
         Me.lblDispatchTimeIndicator.AutoSize = True
-        Me.lblDispatchTimeIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDispatchTimeIndicator.Font = New System.Drawing.Font("Cambria", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDispatchTimeIndicator.Location = New System.Drawing.Point(33, 454)
         Me.lblDispatchTimeIndicator.Name = "lblDispatchTimeIndicator"
-        Me.lblDispatchTimeIndicator.Size = New System.Drawing.Size(322, 13)
+        Me.lblDispatchTimeIndicator.Size = New System.Drawing.Size(280, 12)
         Me.lblDispatchTimeIndicator.TabIndex = 23
         Me.lblDispatchTimeIndicator.Text = "Target Dispatch Rate for Max Capacity (seconds/train):"
         '
@@ -403,14 +404,24 @@ Partial Class frmCapacity
         Me.lblRPD.TabIndex = 25
         Me.lblRPD.Text = "0"
         '
-        'lblDispatcTime
+        'lblDispatchTime
         '
-        Me.lblDispatcTime.AutoSize = True
-        Me.lblDispatcTime.Location = New System.Drawing.Point(386, 454)
-        Me.lblDispatcTime.Name = "lblDispatcTime"
-        Me.lblDispatcTime.Size = New System.Drawing.Size(13, 13)
-        Me.lblDispatcTime.TabIndex = 26
-        Me.lblDispatcTime.Text = "0"
+        Me.lblDispatchTime.AutoSize = True
+        Me.lblDispatchTime.Location = New System.Drawing.Point(386, 454)
+        Me.lblDispatchTime.Name = "lblDispatchTime"
+        Me.lblDispatchTime.Size = New System.Drawing.Size(13, 13)
+        Me.lblDispatchTime.TabIndex = 26
+        Me.lblDispatchTime.Text = "0"
+        '
+        'lblResultsIndicator
+        '
+        Me.lblResultsIndicator.AutoSize = True
+        Me.lblResultsIndicator.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResultsIndicator.Location = New System.Drawing.Point(33, 381)
+        Me.lblResultsIndicator.Name = "lblResultsIndicator"
+        Me.lblResultsIndicator.Size = New System.Drawing.Size(56, 15)
+        Me.lblResultsIndicator.TabIndex = 27
+        Me.lblResultsIndicator.Text = "Results:"
         '
         'frmCapacity
         '
@@ -418,7 +429,8 @@ Partial Class frmCapacity
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(834, 561)
-        Me.Controls.Add(Me.lblDispatcTime)
+        Me.Controls.Add(Me.lblResultsIndicator)
+        Me.Controls.Add(Me.lblDispatchTime)
         Me.Controls.Add(Me.lblRPD)
         Me.Controls.Add(Me.lblRPH)
         Me.Controls.Add(Me.lblDispatchTimeIndicator)
@@ -497,5 +509,6 @@ Partial Class frmCapacity
     Friend WithEvents lblDispatchTimeIndicator As Label
     Friend WithEvents lblRPH As Label
     Friend WithEvents lblRPD As Label
-    Friend WithEvents lblDispatcTime As Label
+    Friend WithEvents lblDispatchTime As Label
+    Friend WithEvents lblResultsIndicator As Label
 End Class
