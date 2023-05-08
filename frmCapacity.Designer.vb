@@ -52,6 +52,12 @@ Partial Class frmCapacity
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCalculate = New System.Windows.Forms.Button()
+        Me.lblRPHIndicator = New System.Windows.Forms.Label()
+        Me.lblRPDIndicator = New System.Windows.Forms.Label()
+        Me.lblDispatchTimeIndicator = New System.Windows.Forms.Label()
+        Me.lblRPH = New System.Windows.Forms.Label()
+        Me.lblRPD = New System.Windows.Forms.Label()
+        Me.lblDispatcTime = New System.Windows.Forms.Label()
         CType(Me.picCoaster, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpStationType.SuspendLayout()
         Me.grpUnload.SuspendLayout()
@@ -320,6 +326,7 @@ Partial Class frmCapacity
         '
         'btnClear
         '
+        Me.btnClear.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.Location = New System.Drawing.Point(462, 519)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(150, 30)
@@ -329,6 +336,7 @@ Partial Class frmCapacity
         '
         'btnExit
         '
+        Me.btnExit.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.Location = New System.Drawing.Point(630, 519)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(150, 30)
@@ -338,6 +346,7 @@ Partial Class frmCapacity
         '
         'btnCalculate
         '
+        Me.btnCalculate.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCalculate.Location = New System.Drawing.Point(578, 337)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(150, 30)
@@ -345,12 +354,76 @@ Partial Class frmCapacity
         Me.btnCalculate.Text = "Calculate"
         Me.btnCalculate.UseVisualStyleBackColor = True
         '
+        'lblRPHIndicator
+        '
+        Me.lblRPHIndicator.AutoSize = True
+        Me.lblRPHIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRPHIndicator.Location = New System.Drawing.Point(33, 408)
+        Me.lblRPHIndicator.Name = "lblRPHIndicator"
+        Me.lblRPHIndicator.Size = New System.Drawing.Size(156, 13)
+        Me.lblRPHIndicator.TabIndex = 21
+        Me.lblRPHIndicator.Text = "Maximum Riders Per Hour:"
+        '
+        'lblRPDIndicator
+        '
+        Me.lblRPDIndicator.AutoSize = True
+        Me.lblRPDIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRPDIndicator.Location = New System.Drawing.Point(33, 431)
+        Me.lblRPDIndicator.Name = "lblRPDIndicator"
+        Me.lblRPDIndicator.Size = New System.Drawing.Size(151, 13)
+        Me.lblRPDIndicator.TabIndex = 22
+        Me.lblRPDIndicator.Text = "Maximum Riders Per Day:"
+        '
+        'lblDispatchTimeIndicator
+        '
+        Me.lblDispatchTimeIndicator.AutoSize = True
+        Me.lblDispatchTimeIndicator.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDispatchTimeIndicator.Location = New System.Drawing.Point(33, 454)
+        Me.lblDispatchTimeIndicator.Name = "lblDispatchTimeIndicator"
+        Me.lblDispatchTimeIndicator.Size = New System.Drawing.Size(322, 13)
+        Me.lblDispatchTimeIndicator.TabIndex = 23
+        Me.lblDispatchTimeIndicator.Text = "Target Dispatch Rate for Max Capacity (seconds/train):"
+        '
+        'lblRPH
+        '
+        Me.lblRPH.AutoSize = True
+        Me.lblRPH.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRPH.Location = New System.Drawing.Point(233, 408)
+        Me.lblRPH.Name = "lblRPH"
+        Me.lblRPH.Size = New System.Drawing.Size(13, 13)
+        Me.lblRPH.TabIndex = 24
+        Me.lblRPH.Text = "0"
+        '
+        'lblRPD
+        '
+        Me.lblRPD.AutoSize = True
+        Me.lblRPD.Location = New System.Drawing.Point(233, 431)
+        Me.lblRPD.Name = "lblRPD"
+        Me.lblRPD.Size = New System.Drawing.Size(13, 13)
+        Me.lblRPD.TabIndex = 25
+        Me.lblRPD.Text = "0"
+        '
+        'lblDispatcTime
+        '
+        Me.lblDispatcTime.AutoSize = True
+        Me.lblDispatcTime.Location = New System.Drawing.Point(386, 454)
+        Me.lblDispatcTime.Name = "lblDispatcTime"
+        Me.lblDispatcTime.Size = New System.Drawing.Size(13, 13)
+        Me.lblDispatcTime.TabIndex = 26
+        Me.lblDispatcTime.Text = "0"
+        '
         'frmCapacity
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(834, 561)
+        Me.Controls.Add(Me.lblDispatcTime)
+        Me.Controls.Add(Me.lblRPD)
+        Me.Controls.Add(Me.lblRPH)
+        Me.Controls.Add(Me.lblDispatchTimeIndicator)
+        Me.Controls.Add(Me.lblRPDIndicator)
+        Me.Controls.Add(Me.lblRPHIndicator)
         Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
@@ -419,4 +492,10 @@ Partial Class frmCapacity
     Friend WithEvents btnClear As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents btnCalculate As Button
+    Friend WithEvents lblRPHIndicator As Label
+    Friend WithEvents lblRPDIndicator As Label
+    Friend WithEvents lblDispatchTimeIndicator As Label
+    Friend WithEvents lblRPH As Label
+    Friend WithEvents lblRPD As Label
+    Friend WithEvents lblDispatcTime As Label
 End Class
