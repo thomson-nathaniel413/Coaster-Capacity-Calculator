@@ -29,9 +29,17 @@ Partial Class frmCapacity
         Me.lblTrainCountIndicator = New System.Windows.Forms.Label()
         Me.lblRideLengthIndicator = New System.Windows.Forms.Label()
         Me.grpStationType = New System.Windows.Forms.GroupBox()
+        Me.radDoubleStation = New System.Windows.Forms.RadioButton()
+        Me.radSingleStation = New System.Windows.Forms.RadioButton()
         Me.grpUnload = New System.Windows.Forms.GroupBox()
+        Me.radNoUnload = New System.Windows.Forms.RadioButton()
+        Me.radSepUnload = New System.Windows.Forms.RadioButton()
         Me.grpPropType = New System.Windows.Forms.GroupBox()
+        Me.radLaunch = New System.Windows.Forms.RadioButton()
+        Me.radLift = New System.Windows.Forms.RadioButton()
         Me.grpRestraintType = New System.Windows.Forms.GroupBox()
+        Me.radOTS = New System.Windows.Forms.RadioButton()
+        Me.radLapBar = New System.Windows.Forms.RadioButton()
         Me.lblPropLengthIndicator = New System.Windows.Forms.Label()
         Me.lblPropRateIndicator = New System.Windows.Forms.Label()
         Me.lblLaunchCountIndicator = New System.Windows.Forms.Label()
@@ -41,14 +49,6 @@ Partial Class frmCapacity
         Me.txtPropLength = New System.Windows.Forms.TextBox()
         Me.txtPropRate = New System.Windows.Forms.TextBox()
         Me.txtLaunchCount = New System.Windows.Forms.TextBox()
-        Me.radSingleStation = New System.Windows.Forms.RadioButton()
-        Me.radDoubleStation = New System.Windows.Forms.RadioButton()
-        Me.radSepUnload = New System.Windows.Forms.RadioButton()
-        Me.radNoUnload = New System.Windows.Forms.RadioButton()
-        Me.radLift = New System.Windows.Forms.RadioButton()
-        Me.radLaunch = New System.Windows.Forms.RadioButton()
-        Me.radLapBar = New System.Windows.Forms.RadioButton()
-        Me.radOTS = New System.Windows.Forms.RadioButton()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCalculate = New System.Windows.Forms.Button()
@@ -59,6 +59,7 @@ Partial Class frmCapacity
         Me.lblRPD = New System.Windows.Forms.Label()
         Me.lblDispatchTime = New System.Windows.Forms.Label()
         Me.lblResultsIndicator = New System.Windows.Forms.Label()
+        Me.radSpecRestraint = New System.Windows.Forms.RadioButton()
         CType(Me.picCoaster, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpStationType.SuspendLayout()
         Me.grpUnload.SuspendLayout()
@@ -129,6 +130,28 @@ Partial Class frmCapacity
         Me.grpStationType.TabStop = False
         Me.grpStationType.Text = "Station Type:"
         '
+        'radDoubleStation
+        '
+        Me.radDoubleStation.AutoSize = True
+        Me.radDoubleStation.Location = New System.Drawing.Point(7, 44)
+        Me.radDoubleStation.Name = "radDoubleStation"
+        Me.radDoubleStation.Size = New System.Drawing.Size(91, 16)
+        Me.radDoubleStation.TabIndex = 1
+        Me.radDoubleStation.TabStop = True
+        Me.radDoubleStation.Text = "Double Sided"
+        Me.radDoubleStation.UseVisualStyleBackColor = True
+        '
+        'radSingleStation
+        '
+        Me.radSingleStation.AutoSize = True
+        Me.radSingleStation.Location = New System.Drawing.Point(7, 20)
+        Me.radSingleStation.Name = "radSingleStation"
+        Me.radSingleStation.Size = New System.Drawing.Size(85, 16)
+        Me.radSingleStation.TabIndex = 0
+        Me.radSingleStation.TabStop = True
+        Me.radSingleStation.Text = "Single Sided"
+        Me.radSingleStation.UseVisualStyleBackColor = True
+        '
         'grpUnload
         '
         Me.grpUnload.Controls.Add(Me.radNoUnload)
@@ -140,6 +163,28 @@ Partial Class frmCapacity
         Me.grpUnload.TabIndex = 6
         Me.grpUnload.TabStop = False
         Me.grpUnload.Text = "Unload Station:"
+        '
+        'radNoUnload
+        '
+        Me.radNoUnload.AutoSize = True
+        Me.radNoUnload.Location = New System.Drawing.Point(7, 44)
+        Me.radNoUnload.Name = "radNoUnload"
+        Me.radNoUnload.Size = New System.Drawing.Size(160, 16)
+        Me.radNoUnload.TabIndex = 1
+        Me.radNoUnload.TabStop = True
+        Me.radNoUnload.Text = "No Separate Unload Station"
+        Me.radNoUnload.UseVisualStyleBackColor = True
+        '
+        'radSepUnload
+        '
+        Me.radSepUnload.AutoSize = True
+        Me.radSepUnload.Location = New System.Drawing.Point(7, 20)
+        Me.radSepUnload.Name = "radSepUnload"
+        Me.radSepUnload.Size = New System.Drawing.Size(166, 16)
+        Me.radSepUnload.TabIndex = 0
+        Me.radSepUnload.TabStop = True
+        Me.radSepUnload.Text = "Has Separate Unload Station"
+        Me.radSepUnload.UseVisualStyleBackColor = True
         '
         'grpPropType
         '
@@ -153,8 +198,31 @@ Partial Class frmCapacity
         Me.grpPropType.TabStop = False
         Me.grpPropType.Text = "Propulsion Type:"
         '
+        'radLaunch
+        '
+        Me.radLaunch.AutoSize = True
+        Me.radLaunch.Location = New System.Drawing.Point(7, 44)
+        Me.radLaunch.Name = "radLaunch"
+        Me.radLaunch.Size = New System.Drawing.Size(61, 16)
+        Me.radLaunch.TabIndex = 1
+        Me.radLaunch.TabStop = True
+        Me.radLaunch.Text = "Launch"
+        Me.radLaunch.UseVisualStyleBackColor = True
+        '
+        'radLift
+        '
+        Me.radLift.AutoSize = True
+        Me.radLift.Location = New System.Drawing.Point(7, 20)
+        Me.radLift.Name = "radLift"
+        Me.radLift.Size = New System.Drawing.Size(59, 16)
+        Me.radLift.TabIndex = 0
+        Me.radLift.TabStop = True
+        Me.radLift.Text = "Lift Hill"
+        Me.radLift.UseVisualStyleBackColor = True
+        '
         'grpRestraintType
         '
+        Me.grpRestraintType.Controls.Add(Me.radSpecRestraint)
         Me.grpRestraintType.Controls.Add(Me.radOTS)
         Me.grpRestraintType.Controls.Add(Me.radLapBar)
         Me.grpRestraintType.Font = New System.Drawing.Font("Cambria", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -164,6 +232,28 @@ Partial Class frmCapacity
         Me.grpRestraintType.TabIndex = 8
         Me.grpRestraintType.TabStop = False
         Me.grpRestraintType.Text = "Restraint Type:"
+        '
+        'radOTS
+        '
+        Me.radOTS.AutoSize = True
+        Me.radOTS.Location = New System.Drawing.Point(7, 44)
+        Me.radOTS.Name = "radOTS"
+        Me.radOTS.Size = New System.Drawing.Size(143, 16)
+        Me.radOTS.TabIndex = 1
+        Me.radOTS.TabStop = True
+        Me.radOTS.Text = "Over the Shoulder/Vest"
+        Me.radOTS.UseVisualStyleBackColor = True
+        '
+        'radLapBar
+        '
+        Me.radLapBar.AutoSize = True
+        Me.radLapBar.Location = New System.Drawing.Point(7, 20)
+        Me.radLapBar.Name = "radLapBar"
+        Me.radLapBar.Size = New System.Drawing.Size(62, 16)
+        Me.radLapBar.TabIndex = 0
+        Me.radLapBar.TabStop = True
+        Me.radLapBar.Text = "Lap Bar"
+        Me.radLapBar.UseVisualStyleBackColor = True
         '
         'lblPropLengthIndicator
         '
@@ -181,9 +271,9 @@ Partial Class frmCapacity
         Me.lblPropRateIndicator.Font = New System.Drawing.Font("Cambria", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPropRateIndicator.Location = New System.Drawing.Point(448, 80)
         Me.lblPropRateIndicator.Name = "lblPropRateIndicator"
-        Me.lblPropRateIndicator.Size = New System.Drawing.Size(280, 12)
+        Me.lblPropRateIndicator.Size = New System.Drawing.Size(182, 12)
         Me.lblPropRateIndicator.TabIndex = 10
-        Me.lblPropRateIndicator.Text = "Acceleration Rate of Propulsion (feet/second/second):"
+        Me.lblPropRateIndicator.Text = "Speed of Propulsion (feet/second):"
         '
         'lblLaunchCountIndicator
         '
@@ -225,7 +315,7 @@ Partial Class frmCapacity
         '
         'txtPropRate
         '
-        Me.txtPropRate.Location = New System.Drawing.Point(734, 75)
+        Me.txtPropRate.Location = New System.Drawing.Point(657, 76)
         Me.txtPropRate.Name = "txtPropRate"
         Me.txtPropRate.Size = New System.Drawing.Size(48, 20)
         Me.txtPropRate.TabIndex = 16
@@ -236,94 +326,6 @@ Partial Class frmCapacity
         Me.txtLaunchCount.Name = "txtLaunchCount"
         Me.txtLaunchCount.Size = New System.Drawing.Size(48, 20)
         Me.txtLaunchCount.TabIndex = 17
-        '
-        'radSingleStation
-        '
-        Me.radSingleStation.AutoSize = True
-        Me.radSingleStation.Location = New System.Drawing.Point(7, 20)
-        Me.radSingleStation.Name = "radSingleStation"
-        Me.radSingleStation.Size = New System.Drawing.Size(85, 16)
-        Me.radSingleStation.TabIndex = 0
-        Me.radSingleStation.TabStop = True
-        Me.radSingleStation.Text = "Single Sided"
-        Me.radSingleStation.UseVisualStyleBackColor = True
-        '
-        'radDoubleStation
-        '
-        Me.radDoubleStation.AutoSize = True
-        Me.radDoubleStation.Location = New System.Drawing.Point(7, 44)
-        Me.radDoubleStation.Name = "radDoubleStation"
-        Me.radDoubleStation.Size = New System.Drawing.Size(91, 16)
-        Me.radDoubleStation.TabIndex = 1
-        Me.radDoubleStation.TabStop = True
-        Me.radDoubleStation.Text = "Double Sided"
-        Me.radDoubleStation.UseVisualStyleBackColor = True
-        '
-        'radSepUnload
-        '
-        Me.radSepUnload.AutoSize = True
-        Me.radSepUnload.Location = New System.Drawing.Point(7, 20)
-        Me.radSepUnload.Name = "radSepUnload"
-        Me.radSepUnload.Size = New System.Drawing.Size(166, 16)
-        Me.radSepUnload.TabIndex = 0
-        Me.radSepUnload.TabStop = True
-        Me.radSepUnload.Text = "Has Separate Unload Station"
-        Me.radSepUnload.UseVisualStyleBackColor = True
-        '
-        'radNoUnload
-        '
-        Me.radNoUnload.AutoSize = True
-        Me.radNoUnload.Location = New System.Drawing.Point(7, 44)
-        Me.radNoUnload.Name = "radNoUnload"
-        Me.radNoUnload.Size = New System.Drawing.Size(160, 16)
-        Me.radNoUnload.TabIndex = 1
-        Me.radNoUnload.TabStop = True
-        Me.radNoUnload.Text = "No Separate Unload Station"
-        Me.radNoUnload.UseVisualStyleBackColor = True
-        '
-        'radLift
-        '
-        Me.radLift.AutoSize = True
-        Me.radLift.Location = New System.Drawing.Point(7, 20)
-        Me.radLift.Name = "radLift"
-        Me.radLift.Size = New System.Drawing.Size(59, 16)
-        Me.radLift.TabIndex = 0
-        Me.radLift.TabStop = True
-        Me.radLift.Text = "Lift Hill"
-        Me.radLift.UseVisualStyleBackColor = True
-        '
-        'radLaunch
-        '
-        Me.radLaunch.AutoSize = True
-        Me.radLaunch.Location = New System.Drawing.Point(7, 44)
-        Me.radLaunch.Name = "radLaunch"
-        Me.radLaunch.Size = New System.Drawing.Size(61, 16)
-        Me.radLaunch.TabIndex = 1
-        Me.radLaunch.TabStop = True
-        Me.radLaunch.Text = "Launch"
-        Me.radLaunch.UseVisualStyleBackColor = True
-        '
-        'radLapBar
-        '
-        Me.radLapBar.AutoSize = True
-        Me.radLapBar.Location = New System.Drawing.Point(7, 20)
-        Me.radLapBar.Name = "radLapBar"
-        Me.radLapBar.Size = New System.Drawing.Size(62, 16)
-        Me.radLapBar.TabIndex = 0
-        Me.radLapBar.TabStop = True
-        Me.radLapBar.Text = "Lap Bar"
-        Me.radLapBar.UseVisualStyleBackColor = True
-        '
-        'radOTS
-        '
-        Me.radOTS.AutoSize = True
-        Me.radOTS.Location = New System.Drawing.Point(7, 44)
-        Me.radOTS.Name = "radOTS"
-        Me.radOTS.Size = New System.Drawing.Size(143, 16)
-        Me.radOTS.TabIndex = 1
-        Me.radOTS.TabStop = True
-        Me.radOTS.Text = "Over the Shoulder/Vest"
-        Me.radOTS.UseVisualStyleBackColor = True
         '
         'btnClear
         '
@@ -423,6 +425,17 @@ Partial Class frmCapacity
         Me.lblResultsIndicator.TabIndex = 27
         Me.lblResultsIndicator.Text = "Results:"
         '
+        'radSpecRestraint
+        '
+        Me.radSpecRestraint.AutoSize = True
+        Me.radSpecRestraint.Location = New System.Drawing.Point(7, 67)
+        Me.radSpecRestraint.Name = "radSpecRestraint"
+        Me.radSpecRestraint.Size = New System.Drawing.Size(118, 16)
+        Me.radSpecRestraint.TabIndex = 2
+        Me.radSpecRestraint.TabStop = True
+        Me.radSpecRestraint.Text = "Specialty Restraint"
+        Me.radSpecRestraint.UseVisualStyleBackColor = True
+        '
         'frmCapacity
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -511,4 +524,5 @@ Partial Class frmCapacity
     Friend WithEvents lblRPD As Label
     Friend WithEvents lblDispatchTime As Label
     Friend WithEvents lblResultsIndicator As Label
+    Friend WithEvents radSpecRestraint As RadioButton
 End Class
